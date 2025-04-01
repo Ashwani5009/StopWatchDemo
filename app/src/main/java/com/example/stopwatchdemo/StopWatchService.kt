@@ -13,7 +13,7 @@ class StopWatchService: Service(){
 
     override fun onStartCommand(intent: Intent, flags: Int, startId: Int): Int {
         val time = intent.getDoubleExtra(CURRENT_TIME,0.0)
-        timer.scheduleAtFixedRate(StopWatchTimerTask(time),0,1000)
+        timer.schedule(StopWatchTimerTask(time),0,1000)
         return START_NOT_STICKY
     }
 
